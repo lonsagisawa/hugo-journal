@@ -24,9 +24,11 @@
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
   <link rel="stylesheet" href="{{ "css/highlight.css" | relURL }}">
-  <link rel="stylesheet" href="{{ "css/journal.css" | relURL }}">
+  {{ $sass := resources.Get "sass/journal.scss" }}
+  {{ $options := (dict "outputStyle" "compressed") }}
+  {{ $style := $sass | toCSS $options | fingerprint }}
+  <link rel="stylesheet" href="{{ $style.Permalink }}">
   <link href="{{ "index.xml" | relURL }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}">
-
 </head>
 
 <body>
