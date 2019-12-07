@@ -1,15 +1,15 @@
 {{ partial "top.html" . }}
 
   <article class="posts">
-
-    {{ range site.RegularPages.GroupByDate "2006" -}}
+    <h2>記事の一覧</h2>
+    {{ range site.RegularPages.GroupByDate "2006年" -}}
     <section>
-      <h2>{{ .Key }}</h2>
+      <h3>{{ .Key }}</h3>
 
       <ol>
         {{ range .Pages -}}
         <li>
-          <time datetime="{{ .Date.Format "2006-01-02 15:04:05 MST" }}">{{ .Date.Format "Jan 02"}}</time>
+          <time datetime="{{ .Date.Format "2006-01-02 15:04:05 MST" }}">{{ .Date.Format "1月2日"}}</time>
           <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         </li>
         {{- end }}
