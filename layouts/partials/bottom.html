@@ -1,24 +1,20 @@
-
+<hr>
       <footer class="site-footer">
+        <h3>書いている人</h3>
         <span itemscope itemtype="http://schema.org/Person">
           <link itemprop="url" href="{{ .Site.BaseURL }}">
-          <span itemprop="name">{{- .Site.Author.name -}}</span>
+          <h4 itemprop="name">{{- .Site.Author.name -}}</h4>
 
-          {{ if isset .Site.Params "work" -}},
-          <span itemprop="jobTitle">{{- .Site.Params.work.jobTitle -}}</span> at
-          <span itemprop="memberOf" itemscope itemtype="http://schema.org/Organization"><a itemprop="url" href="{{ .Site.Params.work.companyUrl }}"><span itemprop="name">
-            {{- .Site.Params.work.company -}}
-          </span></a></span>
-          {{- end -}}
-
-          <br>
+          {{ if isset .Site.Params "mastodonurl" -}}
+          <a itemprop="sameAs" href="{{ .Site.Params.mastodonURL }}" title="Mastodon">Mastodon</a>
+          {{- end }}
 
           {{ if isset .Site.Params "githubusername" -}}
-          <a itemprop="sameAs" href="https://github.com/{{ .Site.Params.githubUsername }}" title="GitHub">GH</a>
+          <a itemprop="sameAs" href="https://github.com/{{ .Site.Params.githubUsername }}" title="GitHub">GitHub</a>
           {{- end }}
 
           {{ if isset .Site.Params "twitterusername" -}}
-          <a itemprop="sameAs" href="https://twitter.com/{{ .Site.Params.twitterUsername }}" title="Twitter">TW</a>
+          <a itemprop="sameAs" href="https://twitter.com/{{ .Site.Params.twitterUsername }}" title="Twitter">Twitter</a>
           {{- end}}
 
           {{ if isset .Site.Params "gpg" -}}
