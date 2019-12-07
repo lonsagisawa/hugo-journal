@@ -6,6 +6,7 @@ $serif: 'Arvo';
 $monospace: '"Source Code Pro"';
 $fs: 1rem;
 $fs-large: 1.125rem;
+$fs-small: 0.75rem;
 $std-margin: 0 0 1rem;
 $break-small: 800px;
 
@@ -20,7 +21,8 @@ html {
 
   color: $black;
 
-  font-family: $serif, serif;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "游ゴシック体", YuGothic, "Yu Gothic Medium", sans-serif;
+  font-feature-settings: "pkna" 1;
   font-size: $fs;
 
   @media screen and (min-width: $break-small) {
@@ -209,7 +211,7 @@ h6 {
 }
 
 .site-nav a::before {
-  content: '\2190'; // left arrow
+  // content: '\2190'; // left arrow
   margin-right: .25rem;
 }
 
@@ -274,4 +276,15 @@ h6 {
 
 .hljs {
   font-size: .875rem;
+}
+
+/* Additional Typography settings */
+
+h1, h2, h3, h4, h5, h6, strong {
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "游ゴシック体", YuGothic, "Yu Gothic", sans-serif;
+  font-weight: 700;
+}
+
+small {
+  font-size: $fs-small;
 }
