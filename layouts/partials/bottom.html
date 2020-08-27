@@ -6,7 +6,7 @@
           <h4 itemprop="name">{{- .Site.Author.name -}}</h4>
 
           {{ if isset .Site.Params "mastodonurl" -}}
-          <a itemprop="sameAs" href="{{ .Site.Params.mastodonURL }}" title="Mastodon">Mastodon</a>
+          <a rel="me" itemprop="sameAs" href="{{ .Site.Params.mastodonURL }}" title="Mastodon">Mastodon</a>
           {{- end }}
 
           {{ if isset .Site.Params "githubusername" -}}
